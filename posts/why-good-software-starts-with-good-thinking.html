@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Why Good Software Starts With Good Thinking | The Build Journal</title>
+
+    <meta name="description"
+        content="Why good software starts with understanding the problem, breaking it down, choosing the right data structures, debugging carefully, and keeping designs simple.">
+
+    <link rel="canonical"
+        href="https://example.com/posts/why-good-software-starts-with-good-thinking.html">
+
+    <meta property="og:title"
+        content="Why Good Software Starts With Good Thinking | The Build Journal">
+
+    <meta property="og:description"
+        content="Why good software starts with understanding the problem, breaking it down, choosing the right data structures, debugging carefully, and keeping designs simple.">
+
+    <meta property="og:type" content="article">
+
+    <meta property="og:url"
+        content="https://example.com/posts/why-good-software-starts-with-good-thinking.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Source+Serif+4:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav">
+
+        <div class="wrap nav-in">
+
+            <a class="logo" href="../index.html">
+                The Build Journal
+            </a>
+
+            <nav id="menu" class="menu" aria-label="Primary">
+
+                <a href="../index.html">Home</a>
+
+                <a href="../blog.html" aria-current="page">
+                    Blog
+                </a>
+
+                <a href="../about.html">
+                    About
+                </a>
+
+                <a href="../contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+            <div class="nav-r">
+
+                <a class="icon-btn"
+                    id="searchBtn"
+                    href="../blog.html?focus=1"
+                    aria-label="Search articles">
+
+                    <svg width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8">
+
+                        <circle cx="11" cy="11" r="7" />
+                        <path d="m20 20-3.5-3.5" />
+
+                    </svg>
+
+                </a>
+
+                <a class="btn-o cta-nav" href="../blog.html">
+                    Explore Articles
+                </a>
+
+                <button class="burger"
+                    aria-expanded="false"
+                    aria-controls="menu"
+                    aria-label="Open menu">
+
+                    <i></i>
+                    <i></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main id="main">
+
+        <article>
+
+            <header class="wrap ah">
+
+                <p class="cat">
+                    <a href="../blog.html">Programming</a>
+                </p>
+
+                <h1 class="serif">
+                    Why Good Software Starts With Good Thinking
+                </h1>
+
+                <p class="lead sm">
+                    The keyboard is the last tool you should reach for.
+                </p>
+
+                <p class="meta">
+                    By Prathamesh Birelliwar &middot;
+                    <time datetime="2026-08-09">Aug 9, 2026</time>
+                    &middot; 9 min read
+                </p>
+
+            </header>
+
+
+            <figure class="wrap hero-fig">
+
+                <img
+                    src="../images/why-good-software-starts-with-good-thinking.svg"
+                    alt="Abstract editorial illustration for Why Good Software Starts With Good Thinking"
+                    width="1200"
+                    height="800">
+
+                <figcaption class="muted small">
+                    Abstract illustration. Replace with your own photography.
+                </figcaption>
+
+            </figure>
+
+
+            <div class="prose body">
+
+                <p>
+                    There is a particular silence that comes before good code. Someone is sketching on paper, or staring at a whiteboard, or walking around the room muttering the problem to themselves. To an outsider it looks like nothing is happening. In practice it is the most productive stretch of the whole job, because the decisions made there determine how much trouble the next several weeks will contain.
+                </p>
+
+                <p>
+                    Beginners usually learn the opposite habit. A course sets an assignment, the deadline is close, and the sensible move seems to be to open the editor and start typing. Often that works, because the assignments are small and the problem is already well defined. The habit then carries into larger work, where the problem is vague and typing fast simply produces confusing code faster.
+                </p>
+
+                <p>
+                    Bad software is rarely a typing problem. It is more often a thinking problem that got written down at speed. This essay is about the thinking: how to understand a problem before solving it, how to break it into pieces you can actually finish, and why the simplest design that works is usually the right one.
+                </p>
+
+
+                <h2>Understanding the problem first</h2>
+
+                <p>
+                    Most failed projects are not undone by a hard algorithm. They are undone by a problem that was never quite understood, so the team built a precise answer to a slightly wrong question. A useful discipline is to state the problem in plain language before touching code. Who is this for? What do they have when they start, and what should they have when they finish? What does success look like, and how would you tell?
+                </p>
+
+                <p>
+                    If you cannot answer those in a few sentences, the code will not rescue you. Writing the description also exposes hidden assumptions. You might find you have been imagining a single user when there are several, or a clean input when the real input is messy. Many bugs that surface late are really misunderstandings that were available, and cheap to fix, on the first day.
+                </p>
+
+
+                <h2>Requirements are a conversation</h2>
+
+                <p>
+                    Requirements rarely arrive as a tidy list. They come as a few sentences from someone busy, and the missing parts are usually where the difficulty hides. A request for a way to track borrowed library books sounds complete until you ask what happens when a book is returned late, whether one person can borrow several copies, and who is allowed to change a record. Each of those questions can change the design.
+                </p>
+
+                <p>
+                    It helps to separate what was stated from what is implied. Nobody says that the system should not lose data, should respond quickly, or should be usable by someone who has never seen it, yet all of those are requirements. Asking questions early can feel like admitting ignorance. It is actually the cheapest form of testing available, because you are testing the idea before it has been built.
+                </p>
+
+
+                <h2>Breaking a large problem into small ones</h2>
+
+                <p>
+                    Large problems are overwhelming largely because they have no visible next step. Decomposition is the habit of turning a vague whole into a sequence of small pieces, each of which you could finish in an afternoon. For the library tracker, the pieces might be storing records of books and members, recording a loan, calculating whether it is overdue, and presenting the results. None is hard on its own, and the order in which you build them is a choice you can make deliberately.
+                </p>
+
+                <p>
+                    Good decomposition also gives you something you can test at each stage. If you build the whole system and then run it, a failure could be anywhere. If you build and check one piece at a time, a failure is almost always in the thing you just added. Planning does not need to be elaborate. A page of notes, a rough diagram of how the pieces talk to each other, or a few lines of pseudocode is usually enough to turn anxiety into a list.
+                </p>
+
+
+                <h2>Choosing the right data structure</h2>
+
+                <p>
+                    Much of the difference between a program that feels instant and one that crawls comes down to how data is organized. A data structure is a decision about what questions you expect to ask most often. Consider the task of checking whether a list contains duplicates.
+                </p>
+
+
+                <pre><code>def has_duplicates_slow(items):
+    for i, a in enumerate(items):
+        if a in items[i + 1:]:
+            return True
+    return False
+
+def has_duplicates(items):
+    seen = set()
+    for item in items:
+        if item in seen:
+            return True
+        seen.add(item)
+    return False</code></pre>
+
+
+                <p>
+                    Both functions return the correct answer. The first scans the remainder of the list for every element, so its work grows roughly with the square of the list length. The second keeps a set of the items already seen, and checking membership in a set takes about constant time on average, so its work grows in proportion to the length of the list. For ten items nobody would notice a difference. For a few hundred thousand, one version finishes quickly and the other makes you wait. The lesson is not to memorize structures but to ask what operation your program performs most often and pick the structure that makes that operation cheap.
+                </p>
+
+
+                <h2>Writing code someone can read</h2>
+
+                <p>
+                    You will spend far more time reading code than writing it, and much of the code you read will be your own from six weeks ago. Maintainability is therefore a kindness to your future self. Names are the largest part of it: a variable called <code>overdue_loans</code> carries meaning that <code>list2</code> does not. A function that does one thing can be described in one sentence, and if you cannot describe it that way, it probably does two jobs and should be split.
+                </p>
+
+                <p>
+                    Comments are best spent on why a decision was made, since the code already shows what it does. Small, honest functions with clear boundaries also make deletion easy, which matters more than people expect. Projects rarely fail because they were missing a clever abstraction. They fail because every part depends on every other part and nobody dares change anything.
+                </p>
+
+
+                <h2>Debugging is reasoning, not luck</h2>
+
+                <p>
+                    New programmers often debug by changing things until the error disappears, which feels active but teaches almost nothing. A calmer approach treats the bug as a question with a testable answer. First, reproduce it reliably, because a bug you cannot trigger on demand is nearly impossible to study. Then form a hypothesis about where the program's actual behavior first departs from what you expected, and design a small experiment to check it: a print statement, a debugger breakpoint, a simplified input.
+                </p>
+
+                <p>
+                    The most powerful technique is narrowing. If the output is wrong at the end of a long process, check the value halfway through; the fault is in whichever half is already wrong. Repeating this is essentially a binary search for the bug. The skill underneath is patience and a willingness to believe the evidence over your assumptions, since the bug is usually in the place you were most certain was fine.
+                </p>
+
+
+                <h2>Every choice is a trade-off</h2>
+
+                <p>
+                    There is rarely a correct design, only designs that favor different things. A flexible structure that handles many future cases costs extra complexity today. A fast approach may be harder to read. A quick fix delivers the feature this week and leaves a mess for next month. Experienced engineers are not people who avoid trade-offs but people who notice them, name them and choose on purpose.
+                </p>
+
+                <p>
+                    A useful question is what you are optimizing for in this particular project. A script you will run once should be written quickly. A system that other people will maintain for years deserves more care. Mismatches between the effort and the situation, such as over-engineering a throwaway tool or hacking together something that will live for years, cause a large share of the regret in software.
+                </p>
+
+
+                <h2>Mistakes beginners tend to make</h2>
+
+                <p>
+                    The familiar ones are starting to code before understanding the problem, trying to build everything at once, copying a solution without knowing why it works, and ignoring error messages that were trying to help. Each is understandable. Starting early feels productive, big plans feel ambitious, and copying works often enough to build the habit. The trouble is that all of them borrow against the future, and the bill arrives as confusion when something breaks.
+                </p>
+
+                <p>
+                    Another quiet mistake is cleverness. Beginners who have just learned a powerful technique want to use it everywhere, producing code that is hard to follow. Senior developers often write plainer code than juniors, precisely because they have been burned by the clever version. When a problem has a simple solution, the simple one is almost always the better choice.
+                </p>
+
+
+                <h2>Why simplicity keeps winning</h2>
+
+                <p>
+                    Simple software has fewer places for bugs to hide, is easier to explain, and is quicker to change when requirements move, as they always do. Every feature you add increases the surface you must test, document and maintain, which is why deciding what not to build is a real design skill. A program that does three things well usually serves people better than one that does ten things unreliably.
+                </p>
+
+                <p>
+                    Simplicity is not the same as laziness. It often takes more effort to find the plain solution, because you have to understand the problem deeply enough to see what can be removed. The reward is code that behaves predictably, and predictability is a form of trust between a program and the people who rely on it.
+                </p>
+
+
+                <h2>What this means for students</h2>
+
+                <p>
+                    You can practice all of this on ordinary coursework. Before your next assignment, spend ten minutes writing the problem in your own words, listing the inputs and outputs, and sketching the steps. Build one small piece at a time and run it after each change. When something breaks, form a hypothesis before editing anything. These habits feel slow at first and speed everything up within a few weeks.
+                </p>
+
+                <p>
+                    Reading other people's code is the other half. Open a small open-source project and look at how it is organized, how things are named, and where the author chose to keep things simple. You will absorb design sense from good examples faster than from any rule.
+                </p>
+
+
+                <h2>The keyboard comes last</h2>
+
+                <p>
+                    Writing code is the visible part of the work, but the quality of a program is mostly decided by choices made earlier: what to build, how to divide it, which trade-offs to accept. People who think carefully before typing are not slower. They avoid the detours that make fast starters slow in the end.
+                </p>
+
+                <p>
+                    That does not mean planning forever. Thinking and building feed each other, and a small prototype often clarifies the problem better than another hour of speculation. The goal is a loop in which you understand a little, build a little, and learn from what the code tells you. Good software comes from that loop, repeated with care.
+                </p>
+
+            </div>
+
+
+            <div class="prose share">
+
+                <span class="muted small">Share</span>
+
+                <a
+                    class="link"
+                    href="https://x.com/intent/tweet?url=https://example.com/posts/why-good-software-starts-with-good-thinking.html">
+                    X
+                </a>
+
+                <a
+                    class="link"
+                    href="https://www.linkedin.com/sharing/share-offsite/?url=https://example.com/posts/why-good-software-starts-with-good-thinking.html">
+                    LinkedIn
+                </a>
+
+                <button
+                    class="link"
+                    id="copy"
+                    data-url="https://example.com/posts/why-good-software-starts-with-good-thinking.html"
+                    type="button">
+                    Copy link
+                </button>
+
+            </div>
+
+
+            <div class="prose">
+
+                <a class="link" href="../blog.html">
+                    &larr; Back to articles
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <section class="wrap sec">
+
+            <h2 class="serif sm2">
+                Related articles
+            </h2>
+
+            <div class="grid flt">
+
+
+                <article
+                    class="card"
+                    data-cat="Projects"
+                    data-date="2026-09-14"
+                    data-text="what i learned building my first real project the tutorials ended long before the real problems began. notes on scope, mess, and finishing. projects">
+
+                    <a
+                        href="../posts/what-i-learned-building-my-first-real-project.html"
+                        class="card-img"
+                        tabindex="-1"
+                        aria-hidden="true">
+
+                        <img
+                            src="../images/what-i-learned-building-my-first-real-project.svg"
+                            alt=""
+                            width="1200"
+                            height="800"
+                            loading="lazy">
+
+                    </a>
+
+                    <div class="card-b">
+
+                        <p class="cat">Projects</p>
+
+                        <h3>
+                            <a href="../posts/what-i-learned-building-my-first-real-project.html">
+                                What I Learned Building My First Real Project
+                            </a>
+                        </h3>
+
+                        <p class="ex">
+                            The tutorials ended long before the real problems began. Notes on scope, mess, and finishing.
+                        </p>
+
+                        <p class="meta">
+                            <time datetime="2026-09-14">Sep 14, 2026</time>
+                            <span>8 min read</span>
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="card"
+                    data-cat="AI & ML"
+                    data-date="2026-09-02"
+                    data-text="understanding artificial intelligence beyond the hype what modern ai systems actually do, where they fail, and how to think about them calmly. ai & ml">
+
+                    <a
+                        href="../posts/understanding-artificial-intelligence-beyond-the-hype.html"
+                        class="card-img"
+                        tabindex="-1"
+                        aria-hidden="true">
+
+                        <img
+                            src="../images/understanding-artificial-intelligence-beyond-the-hype.svg"
+                            alt=""
+                            width="1200"
+                            height="800"
+                            loading="lazy">
+
+                    </a>
+
+                    <div class="card-b">
+
+                        <p class="cat">AI & ML</p>
+
+                        <h3>
+                            <a href="../posts/understanding-artificial-intelligence-beyond-the-hype.html">
+                                Understanding Artificial Intelligence Beyond the Hype
+                            </a>
+                        </h3>
+
+                        <p class="ex">
+                            What modern AI systems actually do, where they fail, and how to think about them calmly.
+                        </p>
+
+                        <p class="meta">
+                            <time datetime="2026-09-02">Sep 2, 2026</time>
+                            <span>9 min read</span>
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="card"
+                    data-cat="Data Science"
+                    data-date="2026-08-21"
+                    data-text="a beginner's guide to machine learning features, labels, training, and evaluation: the four ideas that make the rest of machine learning easier. data science">
+
+                    <a
+                        href="../posts/a-beginners-guide-to-machine-learning.html"
+                        class="card-img"
+                        tabindex="-1"
+                        aria-hidden="true">
+
+                        <img
+                            src="../images/a-beginners-guide-to-machine-learning.svg"
+                            alt=""
+                            width="1200"
+                            height="800"
+                            loading="lazy">
+
+                    </a>
+
+                    <div class="card-b">
+
+                        <p class="cat">Data Science</p>
+
+                        <h3>
+                            <a href="../posts/a-beginners-guide-to-machine-learning.html">
+                                A Beginner's Guide to Machine Learning
+                            </a>
+                        </h3>
+
+                        <p class="ex">
+                            Features, labels, training, and evaluation: the four ideas that make the rest of machine learning easier.
+                        </p>
+
+                        <p class="meta">
+                            <time datetime="2026-08-21">Aug 21, 2026</time>
+                            <span>8 min read</span>
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="foot">
+
+        <div class="wrap foot-in">
+
+            <p class="muted">
+                Ideas, experiments, and lessons from building with technology.
+            </p>
+
+            <nav aria-label="Footer">
+
+                <p class="fh">Read</p>
+
+                <a href="../index.html">Home</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+
+            </nav>
+
+            <nav aria-label="Social">
+
+                <p class="fh">Elsewhere</p>
+
+                <a href="https://github.com/">GitHub</a>
+                <a href="https://linkedin.com/">LinkedIn</a>
+                <a href="https://x.com/">X</a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="wrap">
+
+            <a
+                class="foot-mark"
+                href="../index.html"
+                aria-label="The Build Journal home">
+
+                The Build Journal
+
+            </a>
+
+            <p class="muted small copy">
+                &copy; 2026 Prathamesh Birelliwar. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/search.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>What I Learned Building My First Real Project | The Build Journal</title>
+
+    <meta name="description"
+        content="What I learned from building my first real project: finding the right problem, testing with realistic data, handling feedback, and learning to finish.">
+
+    <link rel="canonical"
+        href="https://example.com/posts/what-i-learned-building-my-first-real-project.html">
+
+    <meta property="og:title"
+        content="What I Learned Building My First Real Project | The Build Journal">
+
+    <meta property="og:description"
+        content="What I learned from building my first real project: finding the right problem, testing with realistic data, handling feedback, and learning to finish.">
+
+    <meta property="og:type" content="article">
+
+    <meta property="og:url"
+        content="https://example.com/posts/what-i-learned-building-my-first-real-project.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Source+Serif+4:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav">
+
+        <div class="wrap nav-in">
+
+            <a class="logo" href="../index.html">
+                The Build Journal
+            </a>
+
+            <nav id="menu" class="menu" aria-label="Primary">
+
+                <a href="../index.html">Home</a>
+
+                <a href="../blog.html" aria-current="page">
+                    Blog
+                </a>
+
+                <a href="../about.html">
+                    About
+                </a>
+
+                <a href="../contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+            <div class="nav-r">
+
+                <a class="icon-btn"
+                    id="searchBtn"
+                    href="../blog.html?focus=1"
+                    aria-label="Search articles">
+
+                    <svg width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8">
+
+                        <circle cx="11" cy="11" r="7" />
+                        <path d="m20 20-3.5-3.5" />
+
+                    </svg>
+
+                </a>
+
+                <a class="btn-o cta-nav" href="../blog.html">
+                    Explore Articles
+                </a>
+
+                <button class="burger"
+                    aria-expanded="false"
+                    aria-controls="menu"
+                    aria-label="Open menu">
+
+                    <i></i>
+                    <i></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main id="main">
+
+        <article>
+
+            <header class="wrap ah">
+
+                <p class="cat">
+                    <a href="../blog.html">Projects</a>
+                </p>
+
+                <h1 class="serif">
+                    What I Learned Building My First Real Project
+                </h1>
+
+                <p class="lead sm">
+                    Tutorials teach syntax. Projects teach judgment.
+                </p>
+
+                <p class="meta">
+                    By Prathamesh Birelliwar &middot;
+                    <time datetime="2026-09-14">Sep 14, 2026</time>
+                    &middot; 8 min read
+                </p>
+
+            </header>
+
+
+            <figure class="wrap hero-fig">
+
+                <img
+                    src="../images/what-i-learned-building-my-first-real-project.svg"
+                    alt="Abstract editorial illustration for What I Learned Building My First Real Project"
+                    width="1200"
+                    height="800">
+
+                <figcaption class="muted small">
+                    Abstract illustration. Replace with your own photography.
+                </figcaption>
+
+            </figure>
+
+
+            <div class="prose body">
+
+                <p>
+                    The idea sounded small enough to survive a weekend. Our department built its timetable in a spreadsheet that one faculty member rebuilt by hand every semester, and every semester somebody ended up double-booked: a lecturer assigned to two rooms at the same hour, or a lab with thirty students and twenty seats. I offered to write a small program that would catch those mistakes automatically. I had finished a few programming courses by then, I knew enough Python to be dangerous, and everything I had built so far ran on my own laptop and nowhere else. I assumed a real project would be the same thing with a few more files.
+                </p>
+
+                <p>
+                    It was not. Four months later the planner was in use by the people it was built for, and I had learned more in that stretch than in the two years of coursework before it. That is not a criticism of the coursework. A course hands you a problem that has already been shaped to fit the lesson, with clear inputs, a known answer, and a deadline that makes sense. A real project hands you the unshaped version, where the requirements contradict each other, the data is untidy, and nobody can tell you what finished is supposed to look like.
+                </p>
+
+                <p>
+                    This essay is about what that gap felt like and about the few habits that eventually closed it. None of them are clever. They are the kind of advice people give you and you nod at politely until you have lived through the alternative.
+                </p>
+
+
+                <h2>The first month went into the wrong problem</h2>
+
+                <p>
+                    My first instinct was ambitious: the program would generate the timetable itself. Give it the courses, the lecturers, the rooms and the constraints, and it would produce a schedule nobody had to fix. I spent weeks on this, reading about scheduling algorithms and writing increasingly tangled code. What I did not understand at the time is that building a timetable that satisfies every rule is a famously difficult kind of problem in general, one that computer scientists treat as computationally hard, while checking whether a finished timetable breaks any rule is comparatively easy. I had picked the hard half of the problem without noticing there was an easy half.
+                </p>
+
+                <p>
+                    The turning point was an ordinary conversation. I finally sat down with the faculty member who built the timetable each term and asked her to walk me through what she actually did. She had the shape of the schedule in her head after years of doing it, and she did not want a machine to take that over. What hurt her was the week after publication, when students and lecturers started writing in about clashes she had missed. She did not need a generator. She needed a second pair of eyes that never got tired. Once I understood that, the project shrank to something I could finish, and it became far more useful than the thing I had been trying to build.
+                </p>
+
+
+                <h2>How the planner actually worked</h2>
+
+                <p>
+                    The design that survived was almost embarrassingly simple. Every class meeting became a session with a day, a start time, an end time, a room, a lecturer and a student group. A clash was any pair of sessions that overlapped in time and shared a room, a lecturer or a group. Two intervals overlap when each one starts before the other ends, and that single sentence, translated into code, was the heart of the program.
+                </p>
+
+
+                <pre><code>def overlaps(a, b):
+    return a.day == b.day and a.start &lt; b.end and b.start &lt; a.end
+
+def find_clashes(sessions):
+    found = []
+    for i, a in enumerate(sessions):
+        for b in sessions[i + 1:]:
+            if not overlaps(a, b):
+                continue
+            if a.room == b.room:
+                found.append(("room", a, b))
+            if a.lecturer == b.lecturer:
+                found.append(("lecturer", a, b))
+            if a.group == b.group:
+                found.append(("group", a, b))
+    return found</code></pre>
+
+
+                <p>
+                    The function compares every session with every later one, so the work grows with the square of the number of sessions. That would be a poor choice for millions of records, but a department timetable has hundreds of sessions, and the comparison finishes in a blink. I was tempted to build something faster and cleverer, and I am glad I did not. The simple version was easy to read, easy to test, and easy to explain to the person who had to trust it, which mattered more than speed ever did.
+                </p>
+
+
+                <h2>A bug I did not expect</h2>
+
+                <p>
+                    The first time I ran the planner on a real semester, it reported a clash for nearly every pair of back-to-back lectures. A class ending at ten and another starting at ten were being flagged as overlapping. I had written less-than-or-equal instead of less-than in the comparison, a one-character mistake that my invented test data had never exposed, because I had never invented two sessions that touched exactly at the boundary. Real timetables are full of such boundaries. It was the first moment I understood why people say that testing with realistic data is a different activity from testing with convenient data.
+                </p>
+
+                <p>
+                    The second surprise was subtler. A lecturer teaching in one building at ten and in another across campus at ten past was not a clash by my definition, yet everyone agreed it was a problem. I had been treating all rules as equal, and they were not. Some rules were hard, such as a room holding only one class at a time. Others were closer to preferences, such as leaving enough time to walk between buildings. I split the output into errors and warnings. That small decision made the tool feel trustworthy, because it stopped crying wolf and started telling people how seriously to take each message.
+                </p>
+
+
+                <h2>What I got wrong, and why it happens</h2>
+
+                <p>
+                    Looking back, my mistakes followed a pattern. I built for an imagined user rather than a real one, because imagining is easier than asking. I polished the interface before the logic was correct, because visible progress is more satisfying than invisible correctness. I treated every bug as a small humiliation instead of information, which made me slow to show the work to anyone. And I kept decisions in my head, so that a month later I could not remember why I had chosen a particular approach and had to rediscover it.
+                </p>
+
+                <p>
+                    These mistakes are common because they all feel like progress while you are making them. Drawing a nice screen feels like building a product. Adding a feature feels more productive than deleting one. Avoiding feedback protects you from criticism, but it also protects the project from the one thing that would improve it. The cure is not discipline in the abstract. It is arranging your work so that reality keeps interrupting you, which is exactly what showing an unfinished version to a real person does.
+                </p>
+
+
+                <h2>What I would tell someone starting now</h2>
+
+                <p>
+                    Write down the smallest version that would be useful to one specific person, and build only that. Put it in their hands as early as it can survive, even if it is ugly, and watch what they do rather than what they say. People are polite in conversation and honest in behavior. Keep a short list of things you are deliberately not building, because the list protects you from your own enthusiasm.
+                </p>
+
+                <p>
+                    Write the rules of your program as tests. A rule like "touching sessions are not a clash" takes one minute to turn into an automated check, and that check will quietly defend the behavior for the rest of the project's life. Write a short README before you write much code, even a few paragraphs about who this is for and how to run it. The act of explaining the project to a stranger tends to reveal the parts you have not thought through, and it leaves a trail for the future version of you who has forgotten everything.
+                </p>
+
+
+                <h2>Software is a relationship, not an object</h2>
+
+                <p>
+                    The deeper lesson took longer to arrive. The planner worked, but it did not remove the human work, and it never will. It was only as good as the data typed into it, and every few weeks someone entered a session with the wrong room code and wondered why the tool had not caught it. The tool could not know what it had never been told. Adoption turned out to be social more than technical: people kept using it because it saved them a specific, recurring irritation, not because it was well engineered.
+                </p>
+
+                <p>
+                    There is also the long tail that tutorials never mention. Releasing the first version was not the end of the project but the start of a different job, made of questions, small fixes and requests that arrive at inconvenient times. Maintenance is where you discover whether your earlier decisions were kind to your future self. Clear names, small functions and honest tests are not academic virtues. They are the difference between a tool you can still change in six months and one you are afraid to touch.
+                </p>
+
+
+                <h2>What it left me with</h2>
+
+                <p>
+                    I still think about that original weekend estimate. It was not wrong because I was careless. It was wrong because I did not yet know what I did not know, and that is precisely what a first real project teaches. You find the edges of your understanding by running into them, and no amount of reading replaces the bruise.
+                </p>
+
+                <p>
+                    If I could pass one idea to my earlier self, it would be that finishing a small thing teaches more than abandoning an ambitious one. A finished project carries evidence: a user, a bug report, a decision you can defend. That evidence is what turns a student who has taken courses into someone who has built something, and the second kind of experience is the one that compounds.
+                </p>
+
+            </div>
+
+
+            <div class="prose share">
+
+                <span class="muted small">
+                    Share
+                </span>
+
+                <a
+                    class="link"
+                    href="https://x.com/intent/tweet?url=https://example.com/posts/what-i-learned-building-my-first-real-project.html">
+                    X
+                </a>
+
+                <a
+                    class="link"
+                    href="https://www.linkedin.com/sharing/share-offsite/?url=https://example.com/posts/what-i-learned-building-my-first-real-project.html">
+                    LinkedIn
+                </a>
+
+                <button
+                    class="link"
+                    id="copy"
+                    data-url="https://example.com/posts/what-i-learned-building-my-first-real-project.html"
+                    type="button">
+                    Copy link
+                </button>
+
+            </div>
+
+
+            <div class="prose">
+
+                <a class="link" href="../blog.html">
+                    &larr; Back to articles
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <section class="wrap sec">
+
+            <h2 class="serif sm2">
+                Related articles
+            </h2>
+
+            <div class="grid flt">
+
+
+                <article
+                    class="card"
+                    data-cat="AI & ML"
+                    data-date="2026-09-02"
+                    data-text="understanding artificial intelligence beyond the hype what modern ai systems actually do, where they fail, and how to think about them calmly. ai & ml">
+
+                    <a
+                        href="../posts/understanding-artificial-intelligence-beyond-the-hype.html"
+                        class="card-img"
+                        tabindex="-1"
+                        aria-hidden="true">
+
+                        <img
+                            src="../images/understanding-artificial-intelligence-beyond-the-hype.svg"
+                            alt=""
+                            width="1200"
+                            height="800"
+                            loading="lazy">
+
+                    </a>
+
+                    <div class="card-b">
+
+                        <p class="cat">
+                            AI & ML
+                        </p>
+
+                        <h3>
+                            <a href="../posts/understanding-artificial-intelligence-beyond-the-hype.html">
+                                Understanding Artificial Intelligence Beyond the Hype
+                            </a>
+                        </h3>
+
+                        <p class="ex">
+                            What modern AI systems actually do, where they fail, and how to think about them calmly.
+                        </p>
+
+                        <p class="meta">
+                            <time datetime="2026-09-02">Sep 2, 2026</time>
+                            <span>9 min read</span>
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="card"
+                    data-cat="Data Science"
+                    data-date="2026-08-21"
+                    data-text="a beginner's guide to machine learning features, labels, training, and evaluation: the four ideas that make the rest of machine learning easier. data science">
+
+                    <a
+                        href="../posts/a-beginners-guide-to-machine-learning.html"
+                        class="card-img"
+                        tabindex="-1"
+                        aria-hidden="true">
+
+                        <img
+                            src="../images/a-beginners-guide-to-machine-learning.svg"
+                            alt=""
+                            width="1200"
+                            height="800"
+                            loading="lazy">
+
+                    </a>
+
+                    <div class="card-b">
+
+                        <p class="cat">
+                            Data Science
+                        </p>
+
+                        <h3>
+                            <a href="../posts/a-beginners-guide-to-machine-learning.html">
+                                A Beginner's Guide to Machine Learning
+                            </a>
+                        </h3>
+
+                        <p class="ex">
+                            Features, labels, training, and evaluation: the four ideas that make the rest of machine learning easier.
+                        </p>
+
+                        <p class="meta">
+                            <time datetime="2026-08-21">Aug 21, 2026</time>
+                            <span>8 min read</span>
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="card"
+                    data-cat="Programming"
+                    data-date="2026-08-09"
+                    data-text="why good software starts with good thinking before the editor opens, the best engineers are already clarifying the problem. programming">
+
+                    <a
+                        href="../posts/why-good-software-starts-with-good-thinking.html"
+                        class="card-img"
+                        tabindex="-1"
+                        aria-hidden="true">
+
+                        <img
+                            src="../images/why-good-software-starts-with-good-thinking.svg"
+                            alt=""
+                            width="1200"
+                            height="800"
+                            loading="lazy">
+
+                    </a>
+
+                    <div class="card-b">
+
+                        <p class="cat">
+                            Programming
+                        </p>
+
+                        <h3>
+                            <a href="../posts/why-good-software-starts-with-good-thinking.html">
+                                Why Good Software Starts With Good Thinking
+                            </a>
+                        </h3>
+
+                        <p class="ex">
+                            Before the editor opens, the best engineers are already clarifying the problem.
+                        </p>
+
+                        <p class="meta">
+                            <time datetime="2026-08-09">Aug 9, 2026</time>
+                            <span>9 min read</span>
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="foot">
+
+        <div class="wrap foot-in">
+
+            <p class="muted">
+                Ideas, experiments, and lessons from building with technology.
+            </p>
+
+
+            <nav aria-label="Footer">
+
+                <p class="fh">
+                    Read
+                </p>
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a href="../blog.html">
+                    Blog
+                </a>
+
+                <a href="../about.html">
+                    About
+                </a>
+
+                <a href="../contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <nav aria-label="Social">
+
+                <p class="fh">
+                    Elsewhere
+                </p>
+
+                <a href="https://github.com/">
+                    GitHub
+                </a>
+
+                <a href="https://linkedin.com/">
+                    LinkedIn
+                </a>
+
+                <a href="https://x.com/">
+                    X
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="wrap">
+
+            <a
+                class="foot-mark"
+                href="../index.html"
+                aria-label="The Build Journal home">
+
+                The Build Journal
+
+            </a>
+
+            <p class="muted small copy">
+                &copy; 2026 Prathamesh Birelliwar. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/search.js" defer></script>
+
+</body>
+
+</html>

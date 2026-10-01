@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>A Beginner's Guide to Machine Learning | The Build Journal</title>
+
+    <meta name="description" content="A beginner-friendly guide to machine learning covering features, labels, training, evaluation, common mistakes, and practical ways to start.">
+
+    <link rel="canonical" href="https://example.com/posts/a-beginners-guide-to-machine-learning.html">
+
+    <meta property="og:title" content="A Beginner's Guide to Machine Learning | The Build Journal">
+    <meta property="og:description" content="A beginner-friendly guide to machine learning covering features, labels, training, evaluation, common mistakes, and practical ways to start.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://example.com/posts/a-beginners-guide-to-machine-learning.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+    <div class="wrap nav-in">
+
+        <a class="logo" href="../index.html">The Build Journal</a>
+
+        <nav id="menu" class="menu" aria-label="Primary">
+            <a href="../index.html">Home</a>
+            <a href="../blog.html" aria-current="page">Blog</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-r">
+
+            <a class="icon-btn"
+               id="searchBtn"
+               href="../blog.html?focus=1"
+               aria-label="Search articles">
+
+                <svg width="18"
+                     height="18"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8">
+
+                    <circle cx="11" cy="11" r="7"/>
+                    <path d="m20 20-3.5-3.5"/>
+
+                </svg>
+
+            </a>
+
+            <a class="btn-o cta-nav" href="../blog.html">
+                Explore Articles
+            </a>
+
+            <button class="burger"
+                    aria-expanded="false"
+                    aria-controls="menu"
+                    aria-label="Open menu">
+
+                <i></i>
+                <i></i>
+
+            </button>
+
+        </div>
+
+    </div>
+</header>
+
+
+<main id="main">
+
+<article>
+
+    <header class="wrap ah">
+
+        <p class="cat">
+            <a href="../blog.html">Data Science</a>
+        </p>
+
+        <h1 class="serif">
+            A Beginner's Guide to Machine Learning
+        </h1>
+
+        <p class="lead sm">
+            Four ideas that unlock everything else.
+        </p>
+
+        <p class="meta">
+            By Prathamesh Birelliwar &middot;
+            <time datetime="2026-08-21">Aug 21, 2026</time>
+            &middot; 8 min read
+        </p>
+
+    </header>
+
+
+    <figure class="wrap hero-fig">
+
+        <img
+            src="../images/a-beginners-guide-to-machine-learning.svg"
+            alt="Abstract editorial illustration for A Beginner's Guide to Machine Learning"
+            width="1200"
+            height="800">
+
+        <figcaption class="muted small">
+            Abstract illustration. Replace with your own photography.
+        </figcaption>
+
+    </figure>
+
+
+    <div class="prose body">
+
+        <p>
+            Most of us have a rough sense that our email can tell junk from the real thing, and that a streaming service somehow guesses what we might want to watch next. Nobody sat down and wrote a rule for every possible spam message or every viewer's taste. There are too many cases, they change too quickly, and the people who build these systems could never list them all. Instead, the systems were shown a very large number of examples and asked to work out for themselves what the examples had in common. That shift, from writing rules to learning from examples, is what machine learning actually is.
+        </p>
+
+        <p>
+            The phrase can sound mysterious, partly because it is surrounded by large claims. Underneath, the central idea is modest and surprisingly easy to hold in your head. You have some information about a situation, you want a prediction about it, and you have many past cases where both the information and the correct answer are known. Machine learning is the practice of building a function from those past cases that makes useful guesses about new ones.
+        </p>
+
+        <p>
+            This guide walks through the ideas you need before any library or framework makes sense: what the data looks like, what the model is, how it improves, and how you decide whether to believe it. If those pieces are clear, the rest of the field becomes a matter of detail rather than magic.
+        </p>
+
+
+        <h2>Features, labels and the shape of a problem</h2>
+
+        <p>
+            Every supervised learning problem can be described with two things. The features are the pieces of information you give the model, and the label is the answer you want it to predict. Imagine a hypothetical dataset of used bicycles. The features might be the age of the bike, its frame size and its brand, and the label might be the price it eventually sold for. Each row is one bicycle, and a collection of such rows is the raw material the model learns from.
+        </p>
+
+        <p>
+            The kind of label decides the kind of problem. When the label is a number, such as a price, you are doing regression. When the label is a category, such as spam or not spam, you are doing classification. This distinction matters less for the mathematics than for how you think about errors. Being off by twenty dollars in a price prediction is a matter of degree, while labelling a real email as spam is simply wrong, and the two deserve different ways of measuring success.
+        </p>
+
+        <p>
+            A model, in this vocabulary, is a function with adjustable settings called parameters. Before training, the settings are arbitrary and the predictions are poor. The learning process is nothing more than adjusting those settings until the function's outputs match the known labels as closely as it can manage.
+        </p>
+
+
+        <h2>How learning actually happens</h2>
+
+        <p>
+            Training is a loop. The model makes predictions on the examples it has been given, a loss function measures how far those predictions are from the true labels, and the parameters are nudged in a direction that should reduce that error. Then the loop repeats. A useful analogy is tuning an old radio: you turn the dial a little, listen to how clear the signal is, and keep adjusting toward clearer sound. The difference is that the computer follows a mathematical rule, usually gradient-based, to decide which way and how far to turn each dial.
+        </p>
+
+        <p>
+            The crucial discipline is what happens next. A model that has been trained on a dataset will naturally do well on that dataset, because it was shaped to fit it. What you care about is how it performs on cases it has never seen. So before training, you set aside a portion of the data as a test set and refuse to look at it until the end. The score on that held-out portion is your honest estimate of real-world performance.
+        </p>
+
+
+        <pre><code>from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+X, y = load_iris(return_X_y=True)
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y)
+
+model = LogisticRegression(max_iter=200)
+model.fit(X_train, y_train)
+
+predictions = model.predict(X_test)
+print(accuracy_score(y_test, predictions))</code></pre>
+
+
+        <p>
+            The code uses the small iris dataset that ships with scikit-learn, where the features are measurements of flower petals and the label is the species. The split reserves twenty percent of the rows for testing, the random seed makes the split repeatable, and stratifying keeps the species balanced across both halves. The call to fit is the training loop described above, and the final line scores the model on data it never saw during training. Short as it is, those few lines contain the whole workflow of a real project.
+        </p>
+
+
+        <h2>A realistic example, step by step</h2>
+
+        <p>
+            Consider a hypothetical scenario: a small online shop wants to predict which customers are likely to stop ordering. The features could include how many orders someone has placed, how long ago the last one was, and the average basket value. The label is whether the customer placed another order in the following ninety days. This is a classification problem, and the first thing a practitioner would do is not train anything. They would look at the data, check for missing values, and ask whether the label means what they think it means.
+        </p>
+
+        <p>
+            Next comes a baseline. Before using any sophisticated method, you build the simplest prediction possible, such as always guessing the most common outcome, and record its score. Then you train a basic model like logistic regression and compare. If the basic model barely beats the baseline, that is valuable information: either the features carry little signal or the problem is harder than it looked. Only then does it make sense to try something more elaborate, and you can judge whether the extra complexity bought anything real.
+        </p>
+
+
+        <h2>Where beginners go wrong</h2>
+
+        <p>
+            The most common mistake is evaluating a model on the data it was trained on, which produces flattering numbers that mean very little. A close relative is data leakage, where information that would not be available at prediction time sneaks into the features. If a feature secretly encodes the answer, perhaps because it was recorded after the outcome happened, the model will look brilliant in testing and fail in practice. When a result looks too good, suspect a leak before celebrating.
+        </p>
+
+        <p>
+            Another trap is trusting accuracy blindly. Suppose, hypothetically, that only one in a hundred transactions is fraudulent. A model that labels every transaction as legitimate would be right ninety-nine percent of the time while catching nothing. Accuracy hides the failure, so in lopsided problems you look at measures that reflect how well the rare class is found. These mistakes recur because the early tutorials use tidy datasets where they never show up, and they feel natural until you have been burned once.
+        </p>
+
+
+        <h2>How to start without getting lost</h2>
+
+        <p>
+            Begin with small, clean datasets and a library like scikit-learn, which lets you run the full workflow in a few lines. Resist the pull toward deep learning until you understand why a simple model works or fails. Most of the real effort in practice goes into the data: cleaning it, understanding where it came from, and choosing features that carry information. Time spent there usually improves results more than switching algorithms does.
+        </p>
+
+        <p>
+            Keep a habit of writing down what you tried and what happened, even for small experiments. Machine learning is empirical, and it is easy to fool yourself with a lucky split or a forgotten change. Re-run experiments with different random seeds to see how stable your results are. A number you can reproduce is worth far more than a higher number you cannot.
+        </p>
+
+
+        <h2>Limits worth taking seriously</h2>
+
+        <p>
+            A model learns the patterns in its training data, including the ones you would rather it did not. If past decisions were biased, a model trained on them will tend to reproduce that bias with a veneer of objectivity. The data is not a neutral mirror of reality but a record of how it was collected. This is why questions about where data came from and who is missing from it belong in the technical work, not in a separate ethics discussion at the end.
+        </p>
+
+        <p>
+            There are also trade-offs between power and understanding. Simple models are easier to inspect and explain, which matters when decisions affect people. More complex models can capture subtler patterns but are harder to interrogate. Neither is automatically better. The right choice depends on what a wrong answer costs and who needs to understand why the model said what it said.
+        </p>
+
+
+        <h2>Where this leaves you</h2>
+
+        <p>
+            Machine learning is less a collection of exotic algorithms than a way of working: define the question carefully, hold data back to test your claims honestly, compare against simple baselines, and stay suspicious of results that seem too good. Once those habits are in place, learning a new algorithm is just learning another tool within a workflow you already understand.
+        </p>
+
+        <p>
+            The field rewards patience and curiosity more than raw mathematical talent at the start. Run the small experiments, break them on purpose, and ask why the numbers changed. The understanding that comes from watching a model fail, and working out why, will carry further than any amount of reading.
+        </p>
+
+    </div>
+
+
+    <div class="prose share">
+
+        <span class="muted small">Share</span>
+
+        <a
+            class="link"
+            href="https://x.com/intent/tweet?url=https://example.com/posts/a-beginners-guide-to-machine-learning.html">
+            X
+        </a>
+
+        <a
+            class="link"
+            href="https://www.linkedin.com/sharing/share-offsite/?url=https://example.com/posts/a-beginners-guide-to-machine-learning.html">
+            LinkedIn
+        </a>
+
+        <button
+            class="link"
+            id="copy"
+            data-url="https://example.com/posts/a-beginners-guide-to-machine-learning.html"
+            type="button">
+            Copy link
+        </button>
+
+    </div>
+
+
+    <div class="prose">
+        <a class="link" href="../blog.html">
+            &larr; Back to articles
+        </a>
+    </div>
+
+</article>
+
+
+<section class="wrap sec">
+
+    <h2 class="serif sm2">
+        Related articles
+    </h2>
+
+    <div class="grid flt">
+
+        <article
+            class="card"
+            data-cat="Projects"
+            data-date="2026-09-14"
+            data-text="what i learned building my first real project the tutorials ended long before the real problems began. notes on scope, mess, and finishing. projects">
+
+            <a
+                href="../posts/what-i-learned-building-my-first-real-project.html"
+                class="card-img"
+                tabindex="-1"
+                aria-hidden="true">
+
+                <img
+                    src="../images/what-i-learned-building-my-first-real-project.svg"
+                    alt=""
+                    width="1200"
+                    height="800"
+                    loading="lazy">
+
+            </a>
+
+            <div class="card-b">
+
+                <p class="cat">Projects</p>
+
+                <h3>
+                    <a href="../posts/what-i-learned-building-my-first-real-project.html">
+                        What I Learned Building My First Real Project
+                    </a>
+                </h3>
+
+                <p class="ex">
+                    The tutorials ended long before the real problems began. Notes on scope, mess, and finishing.
+                </p>
+
+                <p class="meta">
+                    <time datetime="2026-09-14">Sep 14, 2026</time>
+                    <span>8 min read</span>
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article
+            class="card"
+            data-cat="AI & ML"
+            data-date="2026-09-02"
+            data-text="understanding artificial intelligence beyond the hype what modern ai systems actually do, where they fail, and how to think about them calmly. ai & ml">
+
+            <a
+                href="../posts/understanding-artificial-intelligence-beyond-the-hype.html"
+                class="card-img"
+                tabindex="-1"
+                aria-hidden="true">
+
+                <img
+                    src="../images/understanding-artificial-intelligence-beyond-the-hype.svg"
+                    alt=""
+                    width="1200"
+                    height="800"
+                    loading="lazy">
+
+            </a>
+
+            <div class="card-b">
+
+                <p class="cat">AI & ML</p>
+
+                <h3>
+                    <a href="../posts/understanding-artificial-intelligence-beyond-the-hype.html">
+                        Understanding Artificial Intelligence Beyond the Hype
+                    </a>
+                </h3>
+
+                <p class="ex">
+                    What modern AI systems actually do, where they fail, and how to think about them calmly.
+                </p>
+
+                <p class="meta">
+                    <time datetime="2026-09-02">Sep 2, 2026</time>
+                    <span>9 min read</span>
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article
+            class="card"
+            data-cat="Programming"
+            data-date="2026-08-09"
+            data-text="why good software starts with good thinking before the editor opens, the best engineers are already clarifying the problem. programming">
+
+            <a
+                href="../posts/why-good-software-starts-with-good-thinking.html"
+                class="card-img"
+                tabindex="-1"
+                aria-hidden="true">
+
+                <img
+                    src="../images/why-good-software-starts-with-good-thinking.svg"
+                    alt=""
+                    width="1200"
+                    height="800"
+                    loading="lazy">
+
+            </a>
+
+            <div class="card-b">
+
+                <p class="cat">Programming</p>
+
+                <h3>
+                    <a href="../posts/why-good-software-starts-with-good-thinking.html">
+                        Why Good Software Starts With Good Thinking
+                    </a>
+                </h3>
+
+                <p class="ex">
+                    Before the editor opens, the best engineers are already clarifying the problem.
+                </p>
+
+                <p class="meta">
+                    <time datetime="2026-08-09">Aug 9, 2026</time>
+                    <span>9 min read</span>
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer class="foot">
+
+    <div class="wrap foot-in">
+
+        <p class="muted">
+            Ideas, experiments, and lessons from building with technology.
+        </p>
+
+
+        <nav aria-label="Footer">
+
+            <p class="fh">Read</p>
+
+            <a href="../index.html">Home</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+
+        </nav>
+
+
+        <nav aria-label="Social">
+
+            <p class="fh">Elsewhere</p>
+
+            <a href="https://github.com/">GitHub</a>
+            <a href="https://linkedin.com/">LinkedIn</a>
+            <a href="https://x.com/">X</a>
+
+        </nav>
+
+    </div>
+
+
+    <div class="wrap">
+
+        <a
+            class="foot-mark"
+            href="../index.html"
+            aria-label="The Build Journal home">
+
+            The Build Journal
+
+        </a>
+
+        <p class="muted small copy">
+            &copy; 2026 Prathamesh Birelliwar. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="../js/main.js" defer></script>
+<script src="../js/search.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>The Build Journal | Ideas, Code & Building</title>
+
+    <meta name="description"
+        content="The Build Journal — ideas, experiments, and lessons from building with technology. A personal journal by Prathamesh Birelliwar.">
+
+    <link rel="canonical" href="https://example.com/index.html">
+
+    <meta property="og:title" content="The Build Journal | Ideas, Code & Building">
+    <meta property="og:description"
+        content="The Build Journal — ideas, experiments, and lessons from building with technology.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/index.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Source+Serif+4:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav">
+
+        <div class="wrap nav-in">
+
+            <a class="logo" href="index.html">
+                The Build Journal
+            </a>
+
+            <nav id="menu" class="menu" aria-label="Primary">
+
+                <a href="index.html" aria-current="page">
+                    Home
+                </a>
+
+                <a href="blog.html">
+                    Blog
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+            <div class="nav-r">
+
+                <a class="icon-btn"
+                    id="searchBtn"
+                    href="blog.html?focus=1"
+                    aria-label="Search articles">
+
+                    <svg width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8">
+
+                        <circle cx="11" cy="11" r="7" />
+                        <path d="m20 20-3.5-3.5" />
+
+                    </svg>
+
+                </a>
+
+                <a class="btn-o cta-nav" href="blog.html">
+                    Explore Articles
+                </a>
+
+                <button class="burger"
+                    aria-expanded="false"
+                    aria-controls="menu"
+                    aria-label="Open menu">
+
+                    <i></i>
+                    <i></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main id="main">
+
+        <!-- HERO -->
+
+        <section class="hero wrap">
+
+            <p class="eyebrow">
+                THOUGHTS &bull; CODE &bull; BUILDING
+            </p>
+
+            <h1>
+
+                <span class="ln">
+                    <span>Building things.</span>
+                </span>
+
+                <span class="ln">
+                    <span>Understanding how they work.</span>
+                </span>
+
+            </h1>
+
+            <div class="hero-b">
+
+                <div>
+
+                    <p class="lead">
+                        A personal journal about programming, artificial intelligence,
+                        data science, web development, projects, and the lessons that
+                        come from learning by building.
+                    </p>
+
+                    <div class="hero-a">
+
+                        <a class="btn" href="blog.html">
+                            Explore Articles &rarr;
+                        </a>
+
+                        <a class="link" href="about.html">
+                            About the Author
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <figure class="plate">
+
+                    <img src="images/hero.svg"
+                        alt="Abstract study of vertical lines rising and falling like a waveform"
+                        width="1200"
+                        height="800">
+
+                    <figcaption>
+                        <span>Fig. 1</span>
+                        <span>Signal study, ink on paper</span>
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED ARTICLE -->
+
+        <section class="wrap sec">
+
+            <a class="feat"
+                href="posts/what-i-learned-building-my-first-real-project.html">
+
+                <div class="feat-i">
+
+                    <img src="images/what-i-learned-building-my-first-real-project.svg"
+                        alt=""
+                        width="1200"
+                        height="800">
+
+                </div>
+
+                <div class="feat-t">
+
+                    <p class="cat">
+                        Featured in Projects
+                    </p>
+
+                    <h2 class="serif">
+                        What I Learned Building My First Real Project
+                    </h2>
+
+                    <p class="muted">
+                        The tutorials ended long before the real problems began.
+                        Notes on scope, mess, and finishing.
+                    </p>
+
+                    <p class="meta">
+
+                        <span>
+                            Prathamesh Birelliwar
+                        </span>
+
+                        <time datetime="2026-09-14">
+                            Sep 14, 2026
+                        </time>
+
+                        <span>
+                            8 min read
+                        </span>
+
+                    </p>
+
+                    <span class="link">
+                        Read Article &rarr;
+                    </span>
+
+                </div>
+
+            </a>
+
+        </section>
+
+
+        <!-- LATEST ARTICLES -->
+
+        <section class="wrap sec" id="latest">
+
+            <div class="sec-h">
+
+                <h2 class="serif">
+                    Latest Articles
+                </h2>
+
+                <div class="chips"
+                    role="group"
+                    aria-label="Filter by category">
+
+                    <button class="chip on" data-cat="All">
+                        All
+                    </button>
+
+                    <button class="chip" data-cat="AI & ML">
+                        AI & ML
+                    </button>
+
+                    <button class="chip" data-cat="Programming">
+                        Programming
+                    </button>
+
+                    <button class="chip" data-cat="Data Science">
+                        Data Science
+                    </button>
+
+                    <button class="chip" data-cat="Web Development">
+                        Web Development
+                    </button>
+
+                    <button class="chip" data-cat="Ideas">
+                        Ideas
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="grid" data-grid>
+
+                <!-- ARTICLE 1 -->
+
+                <article class="card"
+                    data-cat="AI & ML"
+                    data-date="2026-09-02"
+                    data-text="understanding artificial intelligence beyond the hype what modern ai systems actually do, where they fail, and how to think about them calmly. ai & ml">
+
+                    <a href="posts/understanding-artificial-intelligence-beyond-the-hype.html"
+                        class="card-img"
+                        tabindex="-1"
+                        aria-hidden="true">
+
+                        <img src="images/understanding-artificial-intelligence-beyond-the-hype.svg"
+                            alt=""
+                            width="1200"
+                            height="800"
+                            loading="lazy">
+
+                    </a>
+
+                    <div class="card-b">
+
+                        <p class="cat">
+                            AI & ML
+                        </p>
+
+                        <h3>
+
+                            <a href="posts/understanding-artificial-intelligence-beyond-the-hype.html">
+
+                                Understanding Artificial Intelligence Beyond the Hype
+
+                            </a>
+
+                        </h3>
+
+                        <p class="ex">
+                            What modern AI systems actually do, where they fail,
+                            and how to think about them calmly.
+                        </p>
+
+                        <p class="meta">
+
+                            <time datetime="2026-09-02">
+                                Sep 2, 2026
+                            </time>
+
+                            <span>
+                                9 min read
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ARTICLE 2 -->
+
+                <article class="card"
+                    data-cat="Data Science"
+                    data-date="2026-08-21"
+                    data-text="a beginner's guide to machine learning features, labels, training, and evaluation: the four ideas that make the rest of machine learning easier. data science">
+
+                    <a href="posts/a-beginners-guide-to-machine-learning.html"
+                        class="card-img"
+                        tabindex="-1"
+                        aria-hidden="true">
+
+                        <img src="images/a-beginners-guide-to-machine-learning.svg"
+                            alt=""
+                            width="1200"
+                            height="800"
+                            loading="lazy">
+
+                    </a>
+
+                    <div class="card-b">
+
+                        <p class="cat">
+                            Data Science
+                        </p>
+
+                        <h3>
+
+                            <a href="posts/a-beginners-guide-to-machine-learning.html">
+
+                                A Beginner's Guide to Machine Learning
+
+                            </a>
+
+                        </h3>
+
+                        <p class="ex">
+                            Features, labels, training, and evaluation: the four ideas
+                            that make the rest of machine learning easier.
+                        </p>
+
+                        <p class="meta">
+
+                            <time datetime="2026-08-21">
+                                Aug 21, 2026
+                            </time>
+
+                            <span>
+                                8 min read
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ARTICLE 3 -->
+
+                <article class="card"
+                    data-cat="Programming"
+                    data-date="2026-08-09"
+                    data-text="why good software starts with good thinking before the editor opens, the best engineers are already clarifying the problem. programming">
+
+                    <a href="posts/why-good-software-starts-with-good-thinking.html"
+                        class="card-img"
+                        tabindex="-1"
+                        aria-hidden="true">
+
+                        <img src="images/why-good-software-starts-with-good-thinking.svg"
+                            alt=""
+                            width="1200"
+                            height="800"
+                            loading="lazy">
+
+                    </a>
+
+                    <div class="card-b">
+
+                        <p class="cat">
+                            Programming
+                        </p>
+
+                        <h3>
+
+                            <a href="posts/why-good-software-starts-with-good-thinking.html">
+
+                                Why Good Software Starts With Good Thinking
+
+                            </a>
+
+                        </h3>
+
+                        <p class="ex">
+                            Before the editor opens, the best engineers are already
+                            clarifying the problem.
+                        </p>
+
+                        <p class="meta">
+
+                            <time datetime="2026-08-09">
+                                Aug 9, 2026
+                            </time>
+
+                            <span>
+                                9 min read
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ARTICLE 4 -->
+
+                <article class="card"
+                    data-cat="Ideas"
+                    data-date="2026-07-28"
+                    data-text="building better projects as a computer science student portfolios are crowded with clones. here is how to build something with a point of view. ideas">
+
+                    <a href="posts/building-better-projects-as-a-computer-science-student.html"
+                        class="card-img"
+                        tabindex="-1"
+                        aria-hidden="true">
+
+                        <img src="images/building-better-projects-as-a-computer-science-student.svg"
+                            alt=""
+                            width="1200"
+                            height="800"
+                            loading="lazy">
+
+                    </a>
+
+                    <div class="card-b">
+
+                        <p class="cat">
+                            Ideas
+                        </p>
+
+                        <h3>
+
+                            <a href="posts/building-better-projects-as-a-computer-science-student.html">
+
+                                Building Better Projects as a Computer Science Student
+
+                            </a>
+
+                        </h3>
+
+                        <p class="ex">
+                            Portfolios are crowded with clones. Here is how to build
+                            something with a point of view.
+                        </p>
+
+                        <p class="meta">
+
+                            <time datetime="2026-07-28">
+                                Jul 28, 2026
+                            </time>
+
+                            <span>
+                                8 min read
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ARTICLE 5 -->
+
+                <article class="card"
+                    data-cat="Web Development"
+                    data-date="2026-07-12"
+                    data-text="the things nobody tells you about learning to code confusion is not a sign you are failing. it is the work itself. web development">
+
+                    <a href="posts/the-things-nobody-tells-you-about-learning-to-code.html"
+                        class="card-img"
+                        tabindex="-1"
+                        aria-hidden="true">
+
+                        <img src="images/the-things-nobody-tells-you-about-learning-to-code.svg"
+                            alt=""
+                            width="1200"
+                            height="800"
+                            loading="lazy">
+
+                    </a>
+
+                    <div class="card-b">
+
+                        <p class="cat">
+                            Web Development
+                        </p>
+
+                        <h3>
+
+                            <a href="posts/the-things-nobody-tells-you-about-learning-to-code.html">
+
+                                The Things Nobody Tells You About Learning to Code
+
+                            </a>
+
+                        </h3>
+
+                        <p class="ex">
+                            Confusion is not a sign you are failing.
+                            It is the work itself.
+                        </p>
+
+                        <p class="meta">
+
+                            <time datetime="2026-07-12">
+                                Jul 12, 2026
+                            </time>
+
+                            <span>
+                                7 min read
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p id="empty"
+                class="muted empty"
+                hidden>
+                No articles match that filter. Choose another category.
+            </p>
+
+            <p class="more">
+
+                <a class="link" href="blog.html">
+                    View all articles &rarr;
+                </a>
+
+            </p>
+
+        </section>
+
+
+        <!-- NEWSLETTER -->
+
+        <section class="wrap">
+
+            <div class="news">
+
+                <div>
+
+                    <h2 class="serif">
+                        Stay curious.
+                    </h2>
+
+                    <p class="lead sm">
+                        Occasional essays, technical notes, and ideas delivered
+                        without the noise.
+                    </p>
+
+                </div>
+
+                <form id="news" novalidate>
+
+                    <label for="nemail" class="sr">
+                        Email address
+                    </label>
+
+                    <div class="line-in">
+
+                        <input id="nemail"
+                            type="email"
+                            placeholder="Your email address"
+                            required
+                            autocomplete="email">
+
+                        <button class="txtbtn" type="submit">
+                            Subscribe
+                        </button>
+
+                    </div>
+
+                    <p class="msg"
+                        role="status"
+                        aria-live="polite">
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT AUTHOR -->
+
+        <section class="wrap sec about-p">
+
+            <figure>
+
+                <img src="images/author.svg"
+                    alt="Placeholder portrait for Prathamesh Birelliwar"
+                    width="1200"
+                    height="800"
+                    loading="lazy">
+
+                <figcaption class="muted small">
+                    Placeholder. Replace with your portrait.
+                </figcaption>
+
+            </figure>
+
+            <div>
+
+                <h2 class="serif">
+                    I build to understand things properly, and write about
+                    what I learn along the way.
+                </h2>
+
+                <dl class="facts">
+
+                    <dt>
+                        Author
+                    </dt>
+
+                    <dd>
+                        Prathamesh Birelliwar, AI &amp; Data Science student
+                    </dd>
+
+                    <dt>
+                        Writes about
+                    </dt>
+
+                    <dd>
+                        AI &amp; machine learning, programming, data science,
+                        web development, and projects
+                    </dd>
+
+                    <dt>
+                        Works with
+                    </dt>
+
+                    <dd>
+                        Python, C++, C, SQL, HTML, CSS, JavaScript,
+                        NumPy, Pandas, Git, GitHub, and Jupyter
+                    </dd>
+
+                </dl>
+
+                <a class="link" href="about.html">
+                    Read the full story &rarr;
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="foot">
+
+        <div class="wrap foot-in">
+
+            <p class="muted">
+                Ideas, experiments, and lessons from building with technology.
+            </p>
+
+            <nav aria-label="Footer">
+
+                <p class="fh">
+                    Read
+                </p>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="blog.html">
+                    Blog
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+            <nav aria-label="Social">
+
+                <p class="fh">
+                    Elsewhere
+                </p>
+
+                <a href="https://github.com/">
+                    GitHub
+                </a>
+
+                <a href="https://linkedin.com/">
+                    LinkedIn
+                </a>
+
+                <a href="https://x.com/">
+                    X
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="wrap">
+
+            <a class="logo"
+                href="index.html">
+                The Build Journal
+            </a>
+
+            <p class="muted small copy">
+                &copy; 2026 Prathamesh Birelliwar. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js" defer></script>
+    <script src="js/search.js" defer></script>
+    <script src="js/blog.js" defer></script>
+
+</body>
+
+</html>
